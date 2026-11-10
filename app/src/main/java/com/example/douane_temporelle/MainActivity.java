@@ -1,4 +1,4 @@
-package com.example.douanetemporelle;
+package com.example.douane_temporelle;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // intent explicite
-            Intent intent = new Intent(MainActivity.this, com.example.douanetemporelle.VerificationActivity.class);
+            Intent intent = new Intent(MainActivity.this, com.example.douane_temporelle.VerificationActivity.class);
             intent.putExtra(Cles.nomVoyageur(), nom);
             intent.putExtra(Cles.anneeNaiss(), anneeNaiss);
             intent.putExtra(Cles.anneeDest(), anneeDest);

@@ -1,4 +1,4 @@
-package com.example.douanetemporelle;
+package com.example.douane_temporelle;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -37,7 +37,7 @@ public class ResultActivity extends AppCompatActivity {
 
         // tsaker les activités w tarjaa lel main activity loula
         btnNouveauCg.setOnClickListener(v -> {
-            Intent intent = new Intent(ResultActivity.this, com.example.douanetemporelle.MainActivity.class);
+            Intent intent = new Intent(ResultActivity.this, com.example.douane_temporelle.MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();

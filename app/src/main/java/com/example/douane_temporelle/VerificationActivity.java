@@ -1,4 +1,4 @@
-package com.example.douanetemporelle;
+package com.example.douane_temporelle;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,7 +54,7 @@ public class VerificationActivity extends AppCompatActivity {
 
     // intent explicite lel activity 3
     private void lancerVerdict(boolean approuve) {
-        Intent intent = new Intent(VerificationActivity.this, com.example.douanetemporelle.ResultActivity.class);
+        Intent intent = new Intent(VerificationActivity.this, com.example.douane_temporelle.ResultActivity.class);
         intent.putExtra(Cles.verdict(), approuve);
         intent.putExtra(Cles.nomVoyageur(), nom);
         startActivity(intent);
