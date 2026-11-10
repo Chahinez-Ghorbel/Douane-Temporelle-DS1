@@ -1,24 +1,44 @@
-package com.example.douane_temporelle;
+package com.example.douanetemporelle;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class ResultActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WindowCompat.enableEdgeToEdge(getWindow());
         setContentView(R.layout.activity_result);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        View root = findViewById(R.id.root_result_cg);
+        TextView tvMessageCg = findViewById(R.id.tv_message_cg);
+        Button btnNouveauCg = findViewById(R.id.btn_nouveau_cg);
+
+        // verdict wl nom voyageur ly jew ml act 2
+        boolean approuve = getIntent().getBooleanExtra(Cles.verdict(), false);
+        String nom = getIntent().getStringExtra(Cles.nomVoyageur());
+
+        // loun el bg wl text hasb l verdict
+        if (approuve) {
+            root.setBackgroundColor(Color.parseColor("#2E7D32")); // أخضر
+            tvMessageCg.setText("Bon voyage " + nom + " !");
+        } else {
+            root.setBackgroundColor(Color.parseColor("#C62828")); // أحمر
+            tvMessageCg.setText(nom + " est en état d'arrestation temporelle");
+        }
+
+        // tsaker les activités w tarjaa lel main activity loula
+        btnNouveauNj.setOnClickListener(v -> {
+            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
         });
     }
 }
