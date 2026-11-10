@@ -1,10 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerificationActivity">
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:padding="12dp"
+    android:background="#3E2723">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- taswira aalisar poids 0.3 -->
+    <ImageView
+        android:id="@+id/img_photo_nj"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerInside"
+        android:background="#F5E6C8"
+        android:contentDescription="Photo du voyageur" />
+
+    <!-- text aalimin poids 0.7 -->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:background="@drawable/bg_passeport"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_entete_cg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="PASSEPORT"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#3E2723" />
+
+        <TextView
+            android:id="@+id/tv_nom_cg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_entete_cg"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textColor="#3E2723" />
+
+        <TextView
+            android:id="@+id/tv_age_cg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nom_cg"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:textColor="#3E2723" />
+
+        <TextView
+            android:id="@+id/tv_motif_cg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_age_cg"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:textColor="#3E2723" />
+
+        <Button
+            android:id="@+id/btn_refuser_cg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="#C62828"
+            android:text="Refuser (Risque de paradoxe)" />
+
+        <Button
+            android:id="@+id/btn_approuver_cg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_refuser_cg"
+            android:backgroundTint="#2E7D32"
+            android:text="Approuver" />
+    </RelativeLayout>
+</LinearLayout>
