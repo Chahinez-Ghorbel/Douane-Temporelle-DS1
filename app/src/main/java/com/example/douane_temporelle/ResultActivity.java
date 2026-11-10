@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.douane_temporelle.Cles;
+
 public class ResultActivity extends AppCompatActivity {
 
     @Override
@@ -34,8 +36,8 @@ public class ResultActivity extends AppCompatActivity {
         }
 
         // tsaker les activités w tarjaa lel main activity loula
-        btnNouveauNj.setOnClickListener(v -> {
-            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+        btnNouveauCg.setOnClickListener(v -> {
+            Intent intent = new Intent(ResultActivity.this, com.example.douanetemporelle.MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();

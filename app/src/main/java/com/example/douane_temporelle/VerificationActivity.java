@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.douane_temporelle.Cles;
+
 public class VerificationActivity extends AppCompatActivity {
 
     private TextView tvNomCg, tvAgeCg, tvMotifCg;
@@ -52,7 +54,7 @@ public class VerificationActivity extends AppCompatActivity {
 
     // intent explicite lel activity 3
     private void lancerVerdict(boolean approuve) {
-        Intent intent = new Intent(VerificationActivity.this, ResultActivity.class);
+        Intent intent = new Intent(VerificationActivity.this, com.example.douanetemporelle.ResultActivity.class);
         intent.putExtra(Cles.verdict(), approuve);
         intent.putExtra(Cles.nomVoyageur(), nom);
         startActivity(intent);

@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.douane_temporelle.Cles;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText etNomCg, etNaissanceCg, etDestinationCg;
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // intent explicite
-            Intent intent = new Intent(MainActivity.this, VerificationActivity.class);
+            Intent intent = new Intent(MainActivity.this, com.example.douanetemporelle.VerificationActivity.class);
             intent.putExtra(Cles.nomVoyageur(), nom);
             intent.putExtra(Cles.anneeNaiss(), anneeNaiss);
             intent.putExtra(Cles.anneeDest(), anneeDest);
